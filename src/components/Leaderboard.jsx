@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import '/node_modules/flag-icons/css/flag-icons.min.css'
 
 const Leaderboard = () => {
 	const [leaderboard, setLeaderboard] = useState()
@@ -51,6 +52,7 @@ const Leaderboard = () => {
 
 /**
  * UseEffect -> Call a list of current driver rankings
+ * add flag
  */
 
 export default Leaderboard
