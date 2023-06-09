@@ -39,7 +39,18 @@ const Leaderboard = () => {
 									<span>
 										{standings.Driver.permanentNumber}{' '}
 									</span>
-									<span>{standings.Driver.nationality}</span>
+									{nationalities[
+										standings.Driver.nationality
+									] ? (
+										<span
+											className={`fi fi-${
+												nationalities[
+													standings.Driver.nationality
+												]
+											}`}></span>
+									) : (
+										<span className='fi fi-flag'></span>
+									)}
 								</p>
 								<p>{standings.Constructors[0].name}</p>
 							</div>
@@ -50,9 +61,22 @@ const Leaderboard = () => {
 	)
 }
 
-/**
- * UseEffect -> Call a list of current driver rankings
- * add flag
- */
+const nationalities = {
+	Dutch: 'nl',
+	Mexican: 'mx',
+	Spanish: 'es',
+	British: 'gb',
+	Monegasque: 'mc',
+	Canadian: 'ca',
+	French: 'fr',
+	German: 'de',
+	Australian: 'au',
+	Finnish: 'fi',
+	Chinese: 'cn',
+	Japanese: 'jp',
+	Danish: 'dk',
+	Thai: 'th',
+	American: 'us'
+}
 
 export default Leaderboard
