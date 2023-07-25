@@ -20,6 +20,11 @@
 	src: url('./assets/fonts/Formula1-Wide.ttf') format('truetype');
 }
 
+* {
+	background-color: #3f3f3f;
+	color: white;
+}
+
 #root {
 	max-width: 1280px;
 	margin: 0 auto;

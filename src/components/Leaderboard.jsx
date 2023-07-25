@@ -24,6 +24,8 @@ const Leaderboard = () => {
 		table()
 	}, [])
 
+	console.log(leaderboard)
+
 	return (
 		<div>
 			<h1>Leaderboard</h1>
@@ -35,7 +37,7 @@ const Leaderboard = () => {
 								<p>
 									<span>{standings.position} </span>
 									{standings.Driver.givenName}{' '}
-									{standings.Driver.familyName}{' '}
+									{standings.Driver.familyName.toUpperCase()}{' '}
 									<span>
 										{standings.Driver.permanentNumber}{' '}
 									</span>
@@ -52,7 +54,14 @@ const Leaderboard = () => {
 										<span className='fi fi-flag'></span>
 									)}
 								</p>
-								<p>{standings.Constructors[0].name}</p>
+								<p>
+									{Object.keys(racingTeam).map(x =>
+										x ===
+										standings.Driver.familyName.toLowerCase()
+											? racingTeam[x]
+											: ''
+									)}
+								</p>
 							</div>
 						</li>
 					))}
@@ -78,5 +87,31 @@ const nationalities = {
 	Thai: 'th',
 	American: 'us'
 }
+
+const racingTeam = {
+	verstappen: 'Red Bull Racing Honda RBPT',
+	perez: 'Red Bull Racing Honda RBPT',
+	alonso: 'Aston Martin Aramco Mercedes',
+	hamilton: 'Mercedes',
+	russel: 'Mercedes',
+	sainz: 'Ferrari',
+	leclerc: 'Ferrari',
+	norris: 'McLaren Mercedes',
+	stroll: 'Aston Martin Aramco Mercedes',
+	ocon: 'Alpine Renault',
+	piastri: 'McLaren Mercedes',
+	gasly: 'Alpine Renault',
+	albon: 'Williams Mercedes',
+	hulkenberg: 'Haas Ferrari',
+	bottas: 'Alfa Romeo Ferrari',
+	zhou: 'Alfa Romeo Ferrari',
+	tsunoda: 'Alphatauri Honda RBPT',
+	magnussen: 'Haas Ferrari',
+	sargeant: 'Williams Mercedes',
+	'de vries': 'Alphatauri Honda RBPT',
+	ricciardo: 'Alphatauri Honda RBPT'
+}
+
+console.log(Object.keys(racingTeam).map(x => racingTeam[x]))
 
 export default Leaderboard
