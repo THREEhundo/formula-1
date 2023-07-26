@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import '/node_modules/flag-icons/css/flag-icons.min.css'
+import bottas from '../assets/bottas.avif'
 
 const Leaderboard = () => {
 	const [leaderboard, setLeaderboard] = useState()
@@ -23,8 +24,6 @@ const Leaderboard = () => {
 				.catch(err => console.error(err))
 		table()
 	}, [])
-
-	console.log(leaderboard)
 
 	return (
 		<div>
@@ -62,6 +61,7 @@ const Leaderboard = () => {
 											: ''
 									)}
 								</p>
+								<img src={bottas} alt='' />
 							</div>
 						</li>
 					))}
@@ -112,6 +112,28 @@ const racingTeam = {
 	ricciardo: 'Alphatauri Honda RBPT'
 }
 
-console.log(Object.keys(racingTeam).map(x => racingTeam[x]))
+const driverImg = {
+	verstappen: '../assets/verstappen.avif',
+	perez: '../../',
+	alonso: 'Aston Martin Aramco Mercedes',
+	hamilton: 'Mercedes',
+	russel: 'Mercedes',
+	sainz: 'Ferrari',
+	leclerc: 'Ferrari',
+	norris: 'McLaren Mercedes',
+	stroll: 'Aston Martin Aramco Mercedes',
+	ocon: 'Alpine Renault',
+	piastri: 'McLaren Mercedes',
+	gasly: 'Alpine Renault',
+	albon: 'Williams Mercedes',
+	hulkenberg: 'Haas Ferrari',
+	bottas: 'Alfa Romeo Ferrari',
+	zhou: 'Alfa Romeo Ferrari',
+	tsunoda: 'Alphatauri Honda RBPT',
+	magnussen: 'Haas Ferrari',
+	sargeant: 'Williams Mercedes',
+	'de vries': 'Alphatauri Honda RBPT',
+	ricciardo: 'Alphatauri Honda RBPT'
+}
 
 export default Leaderboard
