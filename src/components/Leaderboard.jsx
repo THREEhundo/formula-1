@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import '/node_modules/flag-icons/css/flag-icons.min.css'
-import bottas from '../assets/bottas.avif'
+import driverImages from './driverImages'
+import './Leaderboard.css'
 
 const Leaderboard = () => {
 	const [leaderboard, setLeaderboard] = useState()
@@ -28,7 +29,7 @@ const Leaderboard = () => {
 	return (
 		<div>
 			<h1>Leaderboard</h1>
-			<ul>
+			<ul className='container'>
 				{leaderboard &&
 					leaderboard.map(standings => (
 						<li key={standings.Driver.driverId}>
@@ -53,7 +54,7 @@ const Leaderboard = () => {
 										<span className='fi fi-flag'></span>
 									)}
 								</p>
-								<p>
+								<p className='team'>
 									{Object.keys(racingTeam).map(x =>
 										x ===
 										standings.Driver.familyName.toLowerCase()
@@ -61,7 +62,24 @@ const Leaderboard = () => {
 											: ''
 									)}
 								</p>
-								<img src={bottas} alt='' />
+								<div>
+									{driverImages.map((filename, index) =>
+										filename.includes(
+											standings.Driver.familyName
+												.replace(/ /g, '_')
+												.toLowerCase()
+										) ? (
+											<img
+												key={index}
+												src={filename}
+												alt={standings.Driver.familyName.toLowerCase()}
+												width={100}
+											/>
+										) : (
+											''
+										)
+									)}
+								</div>
 							</div>
 						</li>
 					))}
@@ -93,7 +111,7 @@ const racingTeam = {
 	perez: 'Red Bull Racing Honda RBPT',
 	alonso: 'Aston Martin Aramco Mercedes',
 	hamilton: 'Mercedes',
-	russel: 'Mercedes',
+	russell: 'Mercedes',
 	sainz: 'Ferrari',
 	leclerc: 'Ferrari',
 	norris: 'McLaren Mercedes',
@@ -112,28 +130,28 @@ const racingTeam = {
 	ricciardo: 'Alphatauri Honda RBPT'
 }
 
-const driverImg = {
-	verstappen: '../assets/verstappen.avif',
-	perez: '../../',
-	alonso: 'Aston Martin Aramco Mercedes',
-	hamilton: 'Mercedes',
-	russel: 'Mercedes',
-	sainz: 'Ferrari',
-	leclerc: 'Ferrari',
-	norris: 'McLaren Mercedes',
-	stroll: 'Aston Martin Aramco Mercedes',
-	ocon: 'Alpine Renault',
-	piastri: 'McLaren Mercedes',
-	gasly: 'Alpine Renault',
-	albon: 'Williams Mercedes',
-	hulkenberg: 'Haas Ferrari',
-	bottas: 'Alfa Romeo Ferrari',
-	zhou: 'Alfa Romeo Ferrari',
-	tsunoda: 'Alphatauri Honda RBPT',
-	magnussen: 'Haas Ferrari',
-	sargeant: 'Williams Mercedes',
-	'de vries': 'Alphatauri Honda RBPT',
-	ricciardo: 'Alphatauri Honda RBPT'
-}
+const imgFiles = [
+	'verstappen',
+	'perez',
+	'alonso',
+	'hamilton',
+	'russell',
+	'sainz',
+	'leclerc',
+	'norris',
+	'stroll',
+	'ocon',
+	'piastri',
+	'gasly',
+	'albonnorris',
+	'hulkenberg',
+	'bottas',
+	'zhou',
+	'tsunoda',
+	'magnussen',
+	'sargeant',
+	'de_vries',
+	'ricciardo'
+]
 
 export default Leaderboard
