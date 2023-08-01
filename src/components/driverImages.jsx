@@ -1,6 +1,6 @@
 import verstappen from '../assets/drivers/verstappen.avif'
-import perez from '../assets/drivers/perez.avif'
-import alfonso from '../assets/drivers/alfonso.avif'
+import pérez from '../assets/drivers/pérez.avif'
+import alonso from '../assets/drivers/alonso.avif'
 import hamilton from '../assets/drivers/hamilton.avif'
 import russell from '../assets/drivers/russell.avif'
 import sainz from '../assets/drivers/sainz.avif'
@@ -22,8 +22,8 @@ import ricciardo from '../assets/drivers/ricciardo.avif'
 
 const driverImages = [
 	verstappen,
-	perez,
-	alfonso,
+	pérez,
+	alonso,
 	hamilton,
 	russell,
 	sainz,

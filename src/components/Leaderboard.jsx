@@ -108,7 +108,7 @@ const nationalities = {
 
 const racingTeam = {
 	verstappen: 'Red Bull Racing Honda RBPT',
-	perez: 'Red Bull Racing Honda RBPT',
+	pérez: 'Red Bull Racing Honda RBPT',
 	alonso: 'Aston Martin Aramco Mercedes',
 	hamilton: 'Mercedes',
 	russell: 'Mercedes',
@@ -130,28 +130,28 @@ const racingTeam = {
 	ricciardo: 'Alphatauri Honda RBPT'
 }
 
-const imgFiles = [
-	'verstappen',
-	'perez',
-	'alonso',
-	'hamilton',
-	'russell',
-	'sainz',
-	'leclerc',
-	'norris',
-	'stroll',
-	'ocon',
-	'piastri',
-	'gasly',
-	'albonnorris',
-	'hulkenberg',
-	'bottas',
-	'zhou',
-	'tsunoda',
-	'magnussen',
-	'sargeant',
-	'de_vries',
-	'ricciardo'
-]
+//const imgFiles = [
+//	'verstappen',
+//	'perez',
+//	'alonso',
+//	'hamilton',
+//	'russell',
+//	'sainz',
+//	'leclerc',
+//	'norris',
+//	'stroll',
+//	'ocon',
+//	'piastri',
+//	'gasly',
+//	'albonnorris',
+//	'hulkenberg',
+//	'bottas',
+//	'zhou',
+//	'tsunoda',
+//	'magnussen',
+//	'sargeant',
+//	'de_vries',
+//	'ricciardo'
+//]
 
 export default Leaderboard
